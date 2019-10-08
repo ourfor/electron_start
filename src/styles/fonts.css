@@ -1,0 +1,13 @@
+@import "dmvendor.css";
+
+@font-face{
+    font-family: AritaHeiti;
+    src: url("../font/AritaHeiti-Medium.woff2");
+    font-weight: 400;
+}
+
+
+
+*{
+    font-family: dm,AritaHeiti,"Noto Sans CJK SC",sans-serif !important;
+}

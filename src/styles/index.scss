@@ -1,0 +1,40 @@
+
+@import 'fonts.css';
+
+body,html {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+#container{
+    height: 100%;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    
+    header {
+        width: 100%;
+        height: 60px;
+        background: red;
+    }
+
+    #main-content {
+        flex-grow: 1;
+        width: 100%;
+        background: blue;
+    }
+
+    footer {
+        width: 100%;
+        height: 60px;
+    }
+
+}

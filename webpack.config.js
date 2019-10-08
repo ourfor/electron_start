@@ -1,15 +1,13 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-// const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const {CleanWebpackPlugin} = require('clean-webpack-plugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
 const webpack = require('webpack');
 
 module.exports = {
 	entry: {
-		main: './src/main.jsx',
+		main: './src/index.jsx',
 	},
-	mode: 'production',
+	mode: 'development',
 	plugins: [
 		new webpack.ProvidePlugin({
             $: "jquery",
@@ -23,13 +21,9 @@ module.exports = {
 		new CleanWebpackPlugin(),
 		new HtmlWebpackPlugin({
 			title: '留给岁月一点空间',
-			template: 'src/production.html',
+			template: 'src/index.html',
 		}),
-		// Static file copy 
-		// new CopyWebpackPlugin([
-		// 	{from: 'src/lib/vditor',to: 'plugins/vditor'},
-		// 	{from: 'src/favicon.ico',to: 'favicon.ico'}
-		// ]),
+
 		new webpack.HotModuleReplacementPlugin(),
 		// OccurrenceOrderPlugin is needed for webpack 1.x only
 		new webpack.optimize.OccurrenceOrderPlugin(),
@@ -88,6 +82,14 @@ module.exports = {
 						loader: path.resolve('./tools/yaml-loader.js')
 					}
 				]
+			},
+			{
+				test: /\.(ttf|woff|woff2|eot|otf)$/,
+				loader: 'file-loader',
+				options: {
+					name: '[name].[ext]',
+					outputPath: 'fonts'
+				}
 			}
 		],
 	},
