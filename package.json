@@ -1,0 +1,17 @@
+{
+  "name": "first_app",
+  "version": "1.0.0",
+  "description": "start to learn electron",
+  "main": "src/main.js",
+  "author": "ourfor",
+  "license": "MIT",
+  "scripts": {
+    "start": "electron ."
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "electron": "^6.0.11",
+    "react": "^16.10.2",
+    "react-dom": "^16.10.2"
+  }
+}
